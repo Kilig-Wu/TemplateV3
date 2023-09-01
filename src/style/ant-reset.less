@@ -1,0 +1,46 @@
+.global-message-confirm {
+    top: 25vh;
+    .ant-modal-content {
+        border-radius: 10px;
+        .ant-modal-close {
+            display: block;
+        }
+    }
+    .ant-modal-body {
+        padding: 55px 32px 40px;
+    }
+    .ant-modal-confirm-body {
+        display: block;
+        & > .anticon {
+            display: block;
+            float: none;
+            margin-right: 0;
+            font-size: 40px;
+        }
+        .ant-modal-confirm-title {
+            margin-top: 15px;
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+        .anticon +.ant-modal-confirm-title+.ant-modal-confirm-content {
+            max-width: 100%;
+            margin-inline-start: 0;
+            margin-block-start: 20px;
+            font-size: 15px;
+            text-align: center;
+            color: #8f98a3;
+        }
+    }
+    .ant-modal-confirm-btns {
+        margin-top: 24px;
+        text-align: center;
+        .ant-btn {
+            width: 120px;
+            height: 40px;
+        }
+        .ant-btn + .ant-btn {
+            margin-left: 35px;
+        }
+    }
+}
