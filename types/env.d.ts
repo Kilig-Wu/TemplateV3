@@ -6,7 +6,7 @@
 //   export default component
 // }
 
-//环境变量
+//环境变量（在代码中使用可获得TS智能提示）
 interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string; //网站标题
   readonly VITE_APP_BASE_API: string; //接口前缀
@@ -15,6 +15,7 @@ interface ImportMetaEnv {
   readonly VITE_DROP_CONSOLE: boolean; //是否删除console.log
   readonly VITE_SOURCEMAP: boolean; //是否sourcemap
   readonly VITE_OUT_DIR: string; //输出路径
+  readonly VITE_PORT: number  //平台本地运行端口号
   // 更多环境变量
 }
 

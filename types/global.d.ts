@@ -8,4 +8,5 @@ declare global {
   type Indexable<T = any> = {
     [key: string]: T;
   };
+  type Recordable<T = any> = Record<string, T>;
 }

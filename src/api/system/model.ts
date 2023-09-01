@@ -37,14 +37,19 @@ export interface RouteItem {
 export type MenuListResult = { menu: RouteItem[] } & Omit<PermCodeResult, 'codeList'>
 
 export interface PermCodeResult {
-    allAuth: { status: boolean } & Auth[];
+    allAuth: Auth[];
     auth: Auth[];
     codeList: string[];
     sysSafeMode: boolean;
 }
 
 interface Auth {
+    // 菜单权限编码，例如：“sys:schedule:list,sys:schedule:info”,多个逗号隔开
     action: string;
+    // 权限名称
     describe: string;
+    // 权限策略1显示2禁用
     type: string;
+    // 权限状态(0无效1有效)
+    status?: boolean
 }

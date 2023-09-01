@@ -24,7 +24,7 @@ export const useUserStore = defineStore('user', () => {
     const GetUserInfo = async () => {
         const data = await getUserInfo();
         userInfo.value = data;
-        return data
+        return true
     };
 
     // 退出登录

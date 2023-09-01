@@ -49,7 +49,7 @@ export default [
     {
         path: '/401',
         name: '401',
-        component: () => import('@/views/exception/404.vue'),
+        component: () => import('@/views/exception/401.vue'),
         meta: {
             title: '未授权'
         }

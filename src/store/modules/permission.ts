@@ -1,34 +1,34 @@
 import { getMenuList, getPermCode } from '@/api/system';
-// 系统权限
-interface AuthItem {
-    // 菜单权限编码，例如：“sys:schedule:list,sys:schedule:info”,多个逗号隔开
-    action: string;
-    // 权限策略1显示2禁用
-    type: string | number;
-    // 权限状态(0无效1有效)
-    status: string | number;
-    // 权限名称
-    describe?: string;
-    isAuth?: boolean;
-}
+import { PermCodeResult, RouteItem } from '@/api/system/model';
 
 export const usePermissionStore = defineStore('permission', () => {
     //路由菜单
-    let menuList = ref([]);
+    let menuList = ref<RouteItem[]>([]);
     //权限列表
-    let authList = ref<AuthItem[]>([]);
+    let authList = ref<PermCodeResult['auth']>([]);
+    //权限代码列表
+    let permCodeList = ref<string[]>([]);
 
+    //获取菜单列表，一般是扁平的，不是树形的
     const GetMenuList = async () => {
-        let data = await getMenuList();
-        menuList.value = data;
-        return data
+        let res = await getMenuList();
+        menuList.value = res.menu;
+        return true
     };
-    const GetPermCode = async() => {
+    //获取权限列表
+    const GetPermCodeList = async() => {
         let res = await getPermCode();
+        permCodeList.value = res.codeList
         authList.value = res.auth
+        return true
+    }
+    //生成动态菜单
+    const GenerateRoutes = () => {
+        console.log(menuList.value);
     }
     return {
         GetMenuList,
-        GetPermCode
+        GetPermCodeList,
+        GenerateRoutes
     }
 });

@@ -1,33 +1,6 @@
 export {};
 
 declare module 'vue-router'{
-  interface Menu {
-    // 路由名称(路由唯一标识)
-    name: string;
-
-    icon?: string;
-  
-    path: string;
-  
-    // path contains param, auto assignment.
-    paramPath?: string;
-  
-    disabled?: boolean;
-  
-    children?: Menu[];
-  
-    orderNo?: number;
-  
-    roles?: RoleEnum[];
-    //路由描述
-    meta?: Partial<RouteMeta>;
-  
-    tag?: MenuTag;
-  
-    hideMenu?: boolean;
-    
-    alwaysShow?: boolean;
-  }
   interface RouteMeta {
     orderNo?: number;
     // title
